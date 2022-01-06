@@ -2,22 +2,22 @@
 #checking if yay is installed and installing it if it isn't
 echo "this script requires yay"
 if pacman -Qs yay > /dev/null ;
-    then ;
+    then
     echo "yay is already installed, continuing"
-else ;
+else
 echo "to install yay, git and base-devel are required"
 if pacman -Qs git > /dev/null ;
-    then ;
+    then
     echo "git is already installed, continuing"
-else ;
+else
 echo "installing git"
 sudo pacman -S git
 echo "git is installed"
-fi ;
+fi
 if pacman -Qs base-devel > /dev/null ;
-    then ;
+    then
     echo "base-devel is already installed, continuing"
-else ;
+else
 echo "installing base-devel"
 sudo pacman -S base-devel
 echo "base-devel is installed"
