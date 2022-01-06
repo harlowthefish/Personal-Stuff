@@ -84,3 +84,4 @@ clear
 sudo sed -i '102i\greeter-session=io.elementary.greeter' /etc/lightdm/lightdm.conf
 sudo systemctl enable lightdm
 echo "if nothing broke then you're probably clear to reboot and get into pantheon"
+exit
