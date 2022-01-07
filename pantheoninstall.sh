@@ -11,7 +11,7 @@ if pacman -Qs git > /dev/null ;
     echo "git is already installed, continuing"
 else
 echo "installing git"
-sudo pacman -S git
+sudo pacman -S --noconfirm git
 echo "git is installed"
 fi
 if pacman -Qs base-devel > /dev/null ;
@@ -19,7 +19,7 @@ if pacman -Qs base-devel > /dev/null ;
     echo "base-devel is already installed, continuing"
 else
 echo "installing base-devel"
-sudo pacman -S base-devel
+sudo pacman -S --noconfirm base-devel
 echo "base-devel is installed"
 fi
 fi
@@ -30,13 +30,13 @@ makepkg -si ;
 cd ~ ;
 #getting the the components that work properly from repos
 echo "beginning installation of working basic components from available repositories"
-yay -S xorg-server lightdm lightdm-pantheon-greeter wingpanel pantheon-applications-menu pantheon-notifications pantheon-terminal switchboard wingpanel-indicator-a11y wingpanel-indicator-bluetooth wingpanel-indicator-datetime wingpanel-indicator-keyboard wingpanel-indicator-network wingpanel-indicator-nightlight wingpanel-indicator-notifications wingpanel-indicator-power wingpanel-indicator-session wingpanel-indicator-sound switchboard-plug-a11y switchboard-plug-about switchboard-plug-applications switchboard-plug-bluetooth switchboard-plug-datetime switchboard-plug-desktop switchboard-plug-display switchboard-plug-locale switchboard-plug-network switchboard-plug-notifications switchboard-plug-online-accounts switchboard-plug-parental-controls switchboard-plug-power switchboard-plug-printers switchboard-plug-security-privacy switchboard-plug-sharing switchboard-plug-sound switchboard-plug-user-accounts switchboard-plug-wacom pantheon-session pantheon-settings-daemon switchboard-plug-pantheon-tweaks-git pantheon-settings-daemon capnet-assist cerbere contractor granite pantheon-geoclue2-agent pantheon-onboarding pantheon-polkit-agent pantheon-shortcut-overlay pantheon-sideload flatpak touchegg meson
+yay -S --nocleanmenu --nodiffmenu --noeditmenu xorg-server lightdm lightdm-pantheon-greeter wingpanel pantheon-applications-menu pantheon-notifications pantheon-terminal switchboard wingpanel-indicator-a11y wingpanel-indicator-bluetooth wingpanel-indicator-datetime wingpanel-indicator-keyboard wingpanel-indicator-network wingpanel-indicator-nightlight wingpanel-indicator-notifications wingpanel-indicator-power wingpanel-indicator-session wingpanel-indicator-sound switchboard-plug-a11y switchboard-plug-about switchboard-plug-applications switchboard-plug-bluetooth switchboard-plug-datetime switchboard-plug-desktop switchboard-plug-display switchboard-plug-locale switchboard-plug-network switchboard-plug-notifications switchboard-plug-online-accounts switchboard-plug-parental-controls switchboard-plug-power switchboard-plug-printers switchboard-plug-security-privacy switchboard-plug-sharing switchboard-plug-sound switchboard-plug-user-accounts switchboard-plug-wacom pantheon-session pantheon-settings-daemon switchboard-plug-pantheon-tweaks-git pantheon-settings-daemon capnet-assist cerbere contractor granite pantheon-geoclue2-agent pantheon-onboarding pantheon-polkit-agent pantheon-shortcut-overlay pantheon-sideload flatpak touchegg meson
 #installing applications
 echo "installing default applications"
-yay -S pantheon-calculator pantheon-calendar pantheon-camera pantheon-code pantheon-files pantheon-mail pantheon-music pantheon-photos pantheon-screenshot pantheon-tasks pantheon-videos
+yay -S --nocleanmenu --nodiffmenu --noeditmenu pantheon-calculator pantheon-calendar pantheon-camera pantheon-code pantheon-files pantheon-mail pantheon-music pantheon-photos pantheon-screenshot pantheon-tasks pantheon-videos
 #installing visual components
 echo "installing visual components"
-yay -S elementary-icon-theme elementary-wallpapers gtk-theme-elementary sound-theme-elementary inter-font ttf-opensans ttf roboto-mono
+yay -S --nocleanmenu --nodiffmenu --noeditmenu elementary-icon-theme elementary-wallpapers gtk-theme-elementary sound-theme-elementary inter-font ttf-opensans ttf roboto-mono
 #compiling broken/buggy/incomplete packages from source
 echo "some packages have issues, so they need to be compiled from source"
 git clone https://github.com/elementary/switchboard-plug-mouse-touchpad
