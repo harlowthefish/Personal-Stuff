@@ -11,8 +11,8 @@ if pacman -Qs base-devel > /dev/null ;
     then
     echo "base-devel is installed"
 else
-fi
 sudo pacman -S base-devel
+fi
 #if yay is not installed, install it now
 if pacman -Qs yay > /dev/null ;
     then
