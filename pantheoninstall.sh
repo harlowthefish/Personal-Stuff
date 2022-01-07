@@ -23,7 +23,6 @@ sudo pacman -S --noconfirm base-devel
 echo "base-devel is installed"
 fi
 fi
-#dropping privileges for makepkg
 git clone https://aur.archlinux.org/yay-bin.git ;
 cd yay-bin ;
 makepkg -si ;
