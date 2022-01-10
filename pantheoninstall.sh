@@ -99,5 +99,10 @@ sudo sed -i '102i\greeter-session=io.elementary.greeter' /etc/lightdm/lightdm.co
 sudo systemctl enable touchegg.service
 sudo systemctl start touchegg.service
 sudo systemctl enable lightdm
+sudo dconf update
+gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/odin.jpg
+gsettings set org.gnome.desktop.interface font-name 'Inter 9'
+gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
 echo "if nothing broke then you're probably clear to reboot and get into pantheon"
 exit ;
