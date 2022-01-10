@@ -25,7 +25,7 @@ fi
 fi
 git clone https://aur.archlinux.org/yay-bin.git ;
 cd yay-bin ;
-makepkg -si ;
+makepkg -si --noconfirm ;
 cd ~ ;
 sudo pacman -Syyu
 #getting the the components that work properly from repos
