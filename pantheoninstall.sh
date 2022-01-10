@@ -88,12 +88,24 @@ sudo echo "gsettings set org.gnome.desktop.interface font-name 'Inter 9'
 gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
 gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/odin.jpg
-sudo rm /etc/xdg/autostart/firstboot.sh
+systemctl disable firstboot.service
+rm -rf /etc/systemd/system/firstboot.service
+sudo rm /firstboot.sh
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
 rm -rf ~/dock
 " > firstboot.sh
-sudo mv firstboot.sh /etc/xdg/autostart/
+sudo mv firstboot.sh /
+sudo echo "[Unit]
+Description=Sets fonts and wallpaper on first boot
+[Service]
+Type=simple
+ExecStart=/firstboot.sh
+[Install]
+WantedBy=multi-user.target
+" > /etc/systemd/system/firstboot.service
+sudo chmod +x /firstboot.sh
+sudo systemctl enable firstboot.service
 sudo sed -i -e '$aHidden=true' /usr/share/applications/bvnc.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/bssh.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/avahi-discover.desktop
