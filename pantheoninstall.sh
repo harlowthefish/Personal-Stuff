@@ -81,7 +81,7 @@ X-GNOME-Autostart-Phase=Panel
 OnlyShowIn=Pantheon;
 " > plank.desktop
 sudo mv plank.desktop /etc/xdg/autostart/
-yay -S pantheon-default-settings
+yay -S pantheon-default-settings --nocleanmenu --nodiffmenu --noeditmenu --noconfirm
 systemctl enable touchegg.service
 systemctl start touchegg
 sudo echo "gsettings set org.gnome.desktop.interface font-name 'Inter 9'
