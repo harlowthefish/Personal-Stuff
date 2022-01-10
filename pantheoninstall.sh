@@ -82,6 +82,8 @@ OnlyShowIn=Pantheon;
 " > plank.desktop
 sudo mv plank.desktop /etc/xdg/autostart/
 yay -S pantheon-default-settings
+systemctl enable touchegg.service
+systemctl start touchegg
 sudo echo "gsettings set org.gnome.desktop.interface font-name 'Inter 9'
 gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
