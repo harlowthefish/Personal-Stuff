@@ -47,7 +47,7 @@ git clone https://github.com/elementary/dock
 git c
 echo "installing switchboard-plug-mouse-touchpad from source"
 cd switchboard-plug-mouse-touchpad
-sed -i "s/option('gnome_40', type : 'boolean', value : false)/option('gnome_40', type : 'boolean', value : true)" ~/switchboard-plug-mouse-touchpad/meson_options.txt
+echo "option('gnome_40', type : 'boolean', value : true)" > ~/switchboard-plug-mouse-touchpad/meson_options.txt
 meson build --prefix=/usr
 cd build
 ninja
@@ -84,16 +84,29 @@ OnlyShowIn=Pantheon;
 " > plank.desktop
 sudo mv plank.desktop /etc/xdg/autostart/
 yay -S --noconfirm pantheon-default-settings
-sudo echo "gsettings set org.gnome.desktop.interface font-name 'Inter 9'
+#sudo echo "gsettings set org.gnome.desktop.interface font-name 'Inter 9'
 gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
 gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/odin.jpg
-sudo rm /etc/xdg/autostart/firstboot.sh
+#sudo rm /etc/xdg/autostart/firstboot.sh
+echo "user-db:user
+system-db:local" > user
+mv user /etc/dconf/profile/
+echo "#dconf path
+[org/gnome/desktop/interface]
+
+#dconf key names and their corresponding values
+font-name 'Inter 9'
+document-font-name 'Open Sans 10'
+monospace-font-name 'Roboto Mono 10'
+
+[org/gnome/desktop/background]
+picture-uri file:///usr/share/backgrounds/odin.jpg" > 01-default-conf
+mv 01-default-conf /etc/dconf/db/local.d/
+dconf update
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
 rm -rf ~/dock
-" > firstboot.sh
-sudo mv firstboot.sh /etc/xdg/autostart/
 sudo sed -i -e '$aHidden=true' /usr/share/applications/bvnc.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/bssh.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/avahi-discover.desktop
@@ -103,6 +116,8 @@ sudo sed -i -e '$aHidden=true' /usr/share/applications/gda-browser-5.0.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/gda-control-center-5.0.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/plank.desktop
 sudo sed -i '102i\greeter-session=io.elementary.greeter' /etc/lightdm/lightdm.conf
+sudo systemctl enable touchegg.service
+sudo systemctl start touchegg.service
 sudo systemctl enable lightdm
 echo "if nothing broke then you're probably clear to reboot and get into pantheon"
 exit ;
