@@ -84,26 +84,6 @@ OnlyShowIn=Pantheon;
 " > plank.desktop
 sudo mv plank.desktop /etc/xdg/autostart/
 yay -S --noconfirm pantheon-default-settings
-#sudo echo "gsettings set org.gnome.desktop.interface font-name 'Inter 9'
-gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
-gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/odin.jpg
-#sudo rm /etc/xdg/autostart/firstboot.sh
-echo "user-db:user
-system-db:local" > user
-sudo mv user /etc/dconf/profile/
-echo "#dconf path
-[org/gnome/desktop/interface]
-
-#dconf key names and their corresponding values
-font-name 'Inter 9'
-document-font-name 'Open Sans 10'
-monospace-font-name 'Roboto Mono 10'
-
-[org/gnome/desktop/background]
-picture-uri file:///usr/share/backgrounds/odin.jpg" > 01-default-conf
-sudo mv 01-default-conf /etc/dconf/db/local.d/
-dconf update
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
 rm -rf ~/dock
