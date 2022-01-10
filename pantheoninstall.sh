@@ -27,7 +27,7 @@ cd yay-bin ;
 makepkg -si --noconfirm ;
 fi
 cd ~ ;
-sudo pacman -Syyu
+sudo pacman -Syyu --noconfirm
 #getting the the components that work properly from repos
 echo "beginning installation of working basic components from available repositories"
 yay -S --nocleanmenu --nodiffmenu --noeditmenu xorg-server lightdm lightdm-pantheon-greeter wingpanel pantheon-applications-menu pantheon-notifications pantheon-terminal switchboard wingpanel-indicator-bluetooth wingpanel-indicator-datetime wingpanel-indicator-keyboard wingpanel-indicator-network wingpanel-indicator-nightlight wingpanel-indicator-notifications wingpanel-indicator-power wingpanel-indicator-session wingpanel-indicator-sound switchboard-plug-about switchboard-plug-applications switchboard-plug-bluetooth switchboard-plug-datetime switchboard-plug-desktop switchboard-plug-display switchboard-plug-locale switchboard-plug-network switchboard-plug-notifications switchboard-plug-online-accounts switchboard-plug-parental-controls switchboard-plug-power switchboard-plug-printers switchboard-plug-security-privacy switchboard-plug-sharing switchboard-plug-sound switchboard-plug-user-accounts switchboard-plug-wacom pantheon-session pantheon-settings-daemon switchboard-plug-pantheon-tweaks-git pantheon-settings-daemon capnet-assist cerbere contractor granite pantheon-geoclue2-agent pantheon-onboarding pantheon-polkit-agent pantheon-shortcut-overlay pantheon-sideload flatpak touchegg meson
