@@ -1,4 +1,6 @@
 #!/bin/bash
+#refreshing pacman and ensuring everything is updated
+sudo pacman -Syyu --noconfirm
 #checking if yay is installed and installing it if it isn't
 echo "this script requires yay"
 if pacman -Qs yay > /dev/null ;
