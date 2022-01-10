@@ -91,7 +91,7 @@ gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgro
 #sudo rm /etc/xdg/autostart/firstboot.sh
 echo "user-db:user
 system-db:local" > user
-mv user /etc/dconf/profile/
+sudo mv user /etc/dconf/profile/
 echo "#dconf path
 [org/gnome/desktop/interface]
 
@@ -102,7 +102,7 @@ monospace-font-name 'Roboto Mono 10'
 
 [org/gnome/desktop/background]
 picture-uri file:///usr/share/backgrounds/odin.jpg" > 01-default-conf
-mv 01-default-conf /etc/dconf/db/local.d/
+sudo mv 01-default-conf /etc/dconf/db/local.d/
 dconf update
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
