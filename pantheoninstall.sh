@@ -103,8 +103,10 @@ Type=simple
 ExecStart=/firstboot.sh
 [Install]
 WantedBy=multi-user.target
-" > /etc/systemd/system/firstboot.service
+" > /firstboot.service
+mv /firstboot.service /etc/systemd/system
 sudo chmod +x /firstboot.sh
+sudo systemctl daemon-reload
 sudo systemctl enable firstboot.service
 sudo sed -i -e '$aHidden=true' /usr/share/applications/bvnc.desktop
 sudo sed -i -e '$aHidden=true' /usr/share/applications/bssh.desktop
