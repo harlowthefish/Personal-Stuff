@@ -22,10 +22,10 @@ echo "installing base-devel"
 sudo pacman -S --noconfirm base-devel
 echo "base-devel is installed"
 fi
-fi
 git clone https://aur.archlinux.org/yay-bin.git ;
 cd yay-bin ;
 makepkg -si --noconfirm ;
+fi
 cd ~ ;
 sudo pacman -Syyu
 #getting the the components that work properly from repos
