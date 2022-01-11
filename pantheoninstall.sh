@@ -85,7 +85,7 @@ OnlyShowIn=Pantheon;
 sudo mv plank.desktop /etc/xdg/autostart/
 echo "[Settings]
 gtk-application-prefer-dark-theme=0" > settings.ini
-mv settings.ini ~/.config/gtk-3.0
+mv settings.ini ~/.config/gtk-3.0/settings.ini
 yay -S --noconfirm pantheon-default-settings
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
@@ -108,6 +108,8 @@ gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgro
 gsettings set org.gnome.desktop.interface font-name 'Inter 9'
 gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
+echo "[Desktop]
+Session=pantheon" > .dmrc
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/dock
 rm -rf ~/gala
