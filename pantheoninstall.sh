@@ -38,7 +38,7 @@ echo "installing default applications"
 yay -S --nocleanmenu --nodiffmenu --noeditmenu --noconfirm pantheon-calculator pantheon-calendar pantheon-camera pantheon-code pantheon-files pantheon-mail pantheon-music pantheon-photos pantheon-screenshot pantheon-tasks pantheon-videos
 #installing visual components
 echo "installing visual components"
-yay -S --nocleanmenu --nodiffmenu --noeditmenu --noconfirm elementary-icon-theme elementary-wallpapers gtk-theme-elementary sound-theme-elementary inter-font ttf-opensans ttf roboto-mono
+yay -S --nocleanmenu --nodiffmenu --noeditmenu --noconfirm elementary-icon-theme elementary-wallpapers gtk-theme-elementary sound-theme-elementary inter-font ttf-opensans ttf-roboto-mono
 #compiling broken/buggy/incomplete packages from source
 echo "some packages have issues, so they need to be compiled from source"
 git clone https://github.com/elementary/switchboard-plug-mouse-touchpad
