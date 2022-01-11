@@ -102,18 +102,21 @@ sudo sed -i '102i\greeter-session=io.elementary.greeter' /etc/lightdm/lightdm.co
 sudo systemctl enable touchegg.service
 sudo systemctl start touchegg.service
 sudo systemctl enable lightdm
-sudo dbus-launch dconf write /org/freedesktop/appearance/color-scheme "'default'"
 sudo dbus-launch dconf update
 gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/odin.jpg
 gsettings set org.gnome.desktop.interface font-name 'Inter 9'
 gsettings set org.gnome.desktop.interface document-font-name 'Open Sans 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 10'
-echo "[Desktop]
-Session=pantheon" > .dmrc
+
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/dock
 rm -rf ~/gala
 sudo rm -rf /usr/share/xsessions/gnome.desktop
 sudo rm -rf /usr/share/xsessions/gnome-xorg.desktop
-echo "if nothing broke then you're probably clear to reboot and get into pantheon"
+echo 'sudo rm -rf /usr/share/wayland-sessions/gnome.desktop
+echo "[Settings]
+gtk-appliations-prefer-dark-theme=0" > ~/.config/gtk-3.0/settings.ini
+rm -rf ~/postinstall.sh
+' > ~/postinstall.sh
+echo "if nothing broke then you're probably clear to reboot and get into pantheon -- remember to run postinstall.sh on first boot to finish setup and cleanup"
 exit ;
