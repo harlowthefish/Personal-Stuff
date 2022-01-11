@@ -100,6 +100,7 @@ sudo systemctl enable touchegg.service
 sudo systemctl start touchegg.service
 sudo systemctl enable lightdm
 sudo dconf update
+xhost +
 sudo dconf write /org/gnome/desktop/interface/font-name "'Inter 9'"
 sudo dconf write /org/gnome/desktop/interface/document-font-name "'Open Sans 10'"
 sudo dconf write /org/gnome/desktop/interface/monospace-font-name "'Roboto Mono 10'"
