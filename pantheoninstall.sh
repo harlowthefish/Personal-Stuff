@@ -110,6 +110,5 @@ rm -rf ~/dock
 rm -rf ~/gala
 sudo rm -rf /usr/share/xsessions/gnome.desktop
 sudo rm -rf /usr/share/xsessions/gnome-xorg.desktop
-sudo rm -rf /usr/share/wayland-sessions/gnome.desktop
 echo "if nothing broke then you're probably clear to reboot and get into pantheon"
 exit ;
