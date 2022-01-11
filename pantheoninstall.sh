@@ -32,7 +32,7 @@ cd ~ ;
 fi
 #getting the the components that work properly from repos
 echo "beginning installation of working basic components from available repositories"
-yay -S --nocleanmenu --nodiffmenu --noeditmenu --noconfirm xorg-server lightdm lightdm-pantheon-greeter wingpanel pantheon-applications-menu pantheon-notifications pantheon-terminal switchboard wingpanel-indicator-bluetooth wingpanel-indicator-datetime wingpanel-indicator-keyboard wingpanel-indicator-network wingpanel-indicator-nightlight wingpanel-indicator-notifications wingpanel-indicator-power wingpanel-indicator-session wingpanel-indicator-sound switchboard-plug-about switchboard-plug-applications switchboard-plug-bluetooth switchboard-plug-datetime switchboard-plug-desktop switchboard-plug-display switchboard-plug-locale switchboard-plug-network switchboard-plug-notifications switchboard-plug-online-accounts switchboard-plug-parental-controls switchboard-plug-power switchboard-plug-printers switchboard-plug-security-privacy switchboard-plug-sharing switchboard-plug-sound switchboard-plug-user-accounts switchboard-plug-wacom pantheon-session pantheon-settings-daemon switchboard-plug-pantheon-tweaks-git pantheon-settings-daemon capnet-assist cerbere contractor granite pantheon-geoclue2-agent pantheon-onboarding pantheon-polkit-agent pantheon-shortcut-overlay pantheon-sideload flatpak touchegg meson
+yay -S --nocleanmenu --nodiffmenu --noeditmenu --noconfirm xorg-server lightdm lightdm-pantheon-greeter wingpanel pantheon-applications-menu pantheon-notifications pantheon-terminal switchboard wingpanel-indicator-bluetooth wingpanel-indicator-datetime wingpanel-indicator-keyboard wingpanel-indicator-network wingpanel-indicator-nightlight wingpanel-indicator-notifications wingpanel-indicator-power wingpanel-indicator-session wingpanel-indicator-sound switchboard-plug-about switchboard-plug-applications switchboard-plug-bluetooth switchboard-plug-datetime switchboard-plug-desktop switchboard-plug-display switchboard-plug-keyboard switchboard-plug-locale switchboard-plug-network switchboard-plug-notifications switchboard-plug-online-accounts switchboard-plug-parental-controls switchboard-plug-power switchboard-plug-printers switchboard-plug-security-privacy switchboard-plug-sharing switchboard-plug-sound switchboard-plug-user-accounts switchboard-plug-wacom pantheon-session pantheon-settings-daemon switchboard-plug-pantheon-tweaks-git pantheon-settings-daemon capnet-assist cerbere contractor granite pantheon-geoclue2-agent pantheon-onboarding pantheon-polkit-agent pantheon-shortcut-overlay pantheon-sideload flatpak touchegg meson
 #installing applications
 echo "installing default applications"
 yay -S --nocleanmenu --nodiffmenu --noeditmenu --noconfirm pantheon-calculator pantheon-calendar pantheon-camera pantheon-code pantheon-files pantheon-mail pantheon-music pantheon-photos pantheon-screenshot pantheon-tasks pantheon-videos
@@ -83,6 +83,8 @@ X-GNOME-Autostart-Phase=Panel
 OnlyShowIn=Pantheon;
 " > plank.desktop
 sudo mv plank.desktop /etc/xdg/autostart/
+echo "[Settings]
+gtk-application-prefer-dark-theme=0" > ~/.config/gtk-3.0/settings.ini
 yay -S --noconfirm pantheon-default-settings
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
