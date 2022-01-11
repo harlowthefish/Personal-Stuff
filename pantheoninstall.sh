@@ -84,7 +84,8 @@ OnlyShowIn=Pantheon;
 " > plank.desktop
 sudo mv plank.desktop /etc/xdg/autostart/
 echo "[Settings]
-gtk-application-prefer-dark-theme=0" > ~/.config/gtk-3.0/settings.ini
+gtk-application-prefer-dark-theme=0" > settings.ini
+mv settings.ini ~/.config/gtk-3.0
 yay -S --noconfirm pantheon-default-settings
 rm -rf ~/switchboard-plug-mouse-touchpad
 rm -rf ~/gala
